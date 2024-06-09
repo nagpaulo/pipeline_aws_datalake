@@ -1,0 +1,72 @@
+
+
+O AWS Lake Formation é um serviço da Amazon Web Services (AWS) projetado para simplificar e fortalecer a criação, gestão e segurança de Data Lakes na nuvem. Um Data Lake é uma arquitetura de armazenamento que permite armazenar grandes volumes de dados brutos e processados de forma flexível e escalável. O Lake Formation oferece recursos específicos para facilitar a construção e o gerenciamento de Data Lakes na AWS.
+
+Principais funcionalidades e conceitos associados ao AWS Lake Formation:
+
+1 - Criação de Data Lakes:
+
+O Lake Formation facilita a criação de Data Lakes, permitindo a definição de esquemas e a ingestão de dados em formatos variados, como CSV, Parquet e Avro.
+
+2 - Controle de Acesso e Permissões:
+
+Oferece uma camada de controle de acesso centralizada para gerenciar permissões e acesso aos dados no Data Lake. Permite definir políticas de segurança para usuários e grupos.
+
+3 - Catalogação de Metadados:
+
+Automatiza a catalogação e organização de metadados para facilitar a descoberta e busca de dados no Data Lake. Isso inclui informações sobre esquemas, formatos e localizações de dados.
+
+4 - Integração com AWS Glue:
+
+O AWS Lake Formation está integrado com o AWS Glue, um serviço de ETL (Extração, Transformação e Carga) que facilita a preparação e transformação de dados antes de serem carregados no Data Lake.
+
+5 - Políticas de Segurança Preditivas:
+
+Utiliza aprendizado de máquina para criar políticas de segurança preditivas, recomendando automaticamente políticas de acesso com base em padrões de uso históricos.
+
+6 - Suporte a SQL e Presto:
+
+Fornece suporte a consultas SQL padrão e ao mecanismo Presto, permitindo que os usuários executem consultas diretamente nos dados do Data Lake.
+
+7 - Integração com Serviços AWS:
+
+Integrado com outros serviços da AWS, como Amazon S3 (armazenamento), AWS Identity and Access Management (IAM), AWS Key Management Service (KMS) e AWS CloudTrail.
+
+8 - Auditoria e Monitoramento:
+
+Oferece recursos de auditoria e monitoramento para rastrear atividades e acessos aos dados no Data Lake.
+
+9 - Suporte a Diversos Formatos de Dados:
+
+Pode ser usado para armazenar e gerenciar dados em vários formatos, incluindo dados estruturados e não estruturados.
+
+O AWS Lake Formation simplifica muitos aspectos do ciclo de vida do Data Lake, desde a ingestão até o acesso seguro aos dados. Ele é projetado para fornecer uma abordagem mais simplificada e segura para a construção e gestão de Data Lakes na nuvem AWS.
+
+
+## Para saber mais: diferença entre Data Warehouse x Data Lake x Data Lakehouse
+
+
+Os dados estão crescendo de forma exponencial, assim como o desafio de armazená-los, gerenciá-los e obter insights. Para gerar o valor de negócio desejado, é importante pensar e estruturar a Arquitetura de Dados de forma correta, o que se torna cada vez mais desafiador.
+
+Categorias de dados
+
+Para começar, vamos entender quais tipos de dados temos em uma organização.
+
+    Os dados estruturados são altamente organizados, como nomes, aniversários, endereços, números de segurança social, preços de ações e geolocalização. Eles são armazenados em tabelas com colunas e linhas que representam os campos e registros. Esses dados são geralmente armazenados em bancos de dados relacionais e são muito comuns em sistemas de gerenciamento de banco de dados.
+
+    Os dados não estruturados não possuem uma estrutura claramente definida e não são facilmente pesquisáveis, como análises online, vídeos, fotos ou arquivos de áudio. Os dados não estruturados são mais desafiadores para consultar e analisar, pois geralmente requerem técnicas mais avançadas de processamento de linguagem natural e inteligência artificial. No entanto, eles também contêm informações valiosas que podem fornecer insights importantes para as empresas, como opiniões de clientes, tendências de mercado e feedback do usuário.
+
+    Os dados semi-estruturados combinam elementos dos outros dois. Possuem uma estrutura vagamente definida, como e-mails que possuem endereços de remetente/destinatário, mas um corpo que pode conter qualquer coisa. Esses dados são geralmente armazenados em formatos como XML, JSON e YAML. Exemplos de dados semiestruturados incluem páginas da web, documentos XML e arquivos JSON.
+
+Data Warehouse x Data Lake x Data Lakehouse
+
+alt text: Diagrama representando a diferença entre Data Warehouse, Data Lake e Data Lakehouse. Há um fluxo mostrando que os dados originam-se de informações externas e operacionais, depois é feito o ETL, criação de Data Marts e por fim são criados BI e reports. Ao lado, há um fluxo mostrando que são aceitos dados estruturados, semi estruturados e não estruturados, depois o dado é inserido no Data Lake e é feito o ETL e criação de Data Marts e reports. Outro caminho apresentado é, após os dados estarem no Data Lake é realizado o Data Prep e Validação das informações, para que áreas consumidoras utilizem esses dados. Do lado direito temos o último fluxo mostrando que são aceitos dados estruturados, semi estruturados e não estruturados, depois o dados é inserido em um “lake” e está pronto para serem criados BI, Steaming Analytics, etc.
+
+fonte: https://www.qlik.com/us/data-lake/data-lakehouse
+
+    Data Warehouse: é um repositório de dados unificado para armazenar grandes quantidades de informações de fontes distintas dentro de uma organização. Um Data Warehouse representa uma fonte única de “verdade dos dados” em uma organização e serve como um componente central de relatórios e análise de negócios. Como principais características temos: Aceita apenas dados estruturados, possui uma estrutura altamente organizada, ACID-compatível (garante a integridade do dado), requer ETL e consome tempo para upload dos dados.
+
+    Data Lake: é um repositório centralizado e altamente flexível que armazena grandes quantidades de dados estruturados, semi-estruturados e não estruturados, ao contrário dos Data Warehouses que processam apenas dados estruturados. Além disso, em um Data Lake, os dados são capturados sem definir o esquema; em vez disso, os dados são extraídos, carregados e transformados (ELT) para fins de análise. Como principais características temos: Aceita dados estruturados, semi-estruturados e não estruturados, possui uma estrutura pouco organizada, não é ACID compatível (possíveis problemas de integridade dos dados), atua com ELT e é fácil e rápido para upload dos dados.
+
+    Data Lakehouse: é uma nova arquitetura de armazenamento de big data que combina os melhores recursos de data warehouses e data lakes. Um Data Lakehouse fornece um repositório único para todos os dados (estruturados, semi-estruturados e não estruturados), ao mesmo tempo que permite os melhores recursos de aprendizado de máquina, inteligência de negócios e processamento de fluxo da categoria. O Data Lakehouse é a mais nova arquitetura de armazenamento de dados que combina a economia e a flexibilidade dos Data Lakes com a confiabilidade e consistência dos Data Warehouses. Como principais características temos: Aceita dados estruturados, semi-estruturados, não estruturados e streaming, possui uma estrutura altamente organizada, ACID-compatível (garante consistência na leitura e escrita de dados por múltiplas fontes), atua com ETL e ELT é otimizado para leitura e escrita de arquivos.
+
